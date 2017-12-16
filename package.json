@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-prettier": "^2.9.0",
@@ -41,5 +42,7 @@
     "url": "(https://github.com/turnbot/phbabluecrew.git)"
   },
   "author": "Brian Turner <turnbot@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://localhost:8080"
+
 }
