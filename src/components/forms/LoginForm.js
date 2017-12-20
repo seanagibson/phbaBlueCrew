@@ -13,7 +13,7 @@ class LoginForm extends React.Component {
         },
         loading: false,
         errors: {}
-    }
+    };
     onChange = e =>
         this.setState({
             data: {...this.state.data, [e.target.name]: e.target.value }
@@ -26,9 +26,11 @@ class LoginForm extends React.Component {
             this.setState({ loading: true });
             this.props
                 .submit(this.state.data)
-                .catch(err => this.setState({ errors: err.response.data.errors, loading: false }));
+//                .catch(err => 
+//                    this.setState({ errors: err.response.data.errors, loading: false })
+//                );
         }
-    }
+    };
 
     validate = (data) => {
         const errors = {};
@@ -36,7 +38,7 @@ class LoginForm extends React.Component {
         if (!data.password) errors.password = "Cannot be Blank";
 
         return errors;
-    }
+    };
     render() {
         const { data, errors, loading } = this.state;
         return ( 
