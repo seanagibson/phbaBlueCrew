@@ -27,7 +27,7 @@ if (localStorage.bluecrewJWT) {
     email: payload.email,
     confirmed: payload.confirmed
   };
-//  setAuthorizationHeader(localStorage.bluecrewJWT);
+  setAuthorizationHeader(localStorage.bluecrewJWT);
   store.dispatch(userLoggedIn(user));
 }
 
