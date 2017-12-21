@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
-import "semantic-ui-css/semantic.min.css";
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import decode from "jwt-decode";
+import rootReducer from "./rootReducer";
+import registerServiceWorker from "./registerServiceWorker";
+import { Provider } from "react-redux";
+import "semantic-ui-css/semantic.min.css";
+import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import App from "./app";
-import registerServiceWorker from "./registerServiceWorker";
-import rootReducer from "./rootReducer";
 import { userLoggedIn } from "./actions/auth";
 import setAuthorizationHeader from "./utils/setAuthorizationHeader";
 
