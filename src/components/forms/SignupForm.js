@@ -7,8 +7,8 @@ import InlineError from "../messages/InlineError";
 class SignupForm extends React.Component {
   state = {
     data: {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     },
     loading: false,
     errors: {}
@@ -52,7 +52,7 @@ class SignupForm extends React.Component {
             type="email"
             id="email"
             name="email"
-            placeholder="email@email.com"
+            placeholder="Enter email address"
             value={data.email}
             onChange={this.onChange}
           />
@@ -65,13 +65,15 @@ class SignupForm extends React.Component {
             type="password"
             id="password"
             name="password"
+            placeholder="Enter password"
             value={data.password}
             onChange={this.onChange}
           />
           {errors.password && <InlineError text={errors.password} />}
         </Form.Field>
 
-        <Button primary>Sign Up</Button>
+
+        <Button primary>Register</Button>
       </Form>
     );
   }

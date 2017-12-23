@@ -7,7 +7,13 @@ import { login } from "../../actions/auth";
 class LoginPage extends React.Component {
 
 	submit = data =>
-		this.props.login(data).then(() => this.props.history.push("/dashboard"));
+		this.props.login(data).then((response) => {
+			if(response.status === 200) {
+				window.localStorage.setItem('bluecrewStorage', response.token)
+				this.props.history.push("/dashboard");
+			}
+//			else
+		});
 
 	render() {
 		return (
