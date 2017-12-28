@@ -1,22 +1,14 @@
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   user: {
-    login: credentials =>
-      axios.post("/api/auth", { credentials }).then(res => res.token),
-    signup: user =>
-      axios.post("/api/users", { user }).then(res => res.data.user),
-    confirm: token =>
-      axios
-        .post("/api/auth/confirmation", { token })
-        .then(res => res.data.user),
-    resetPasswordRequest: email =>
-      axios.post("/api/auth/reset_password_request", { email }),
-    validateToken: token => axios.post("/api/auth/validate_token", { token }),
-    resetPassword: data => axios.post("/api/auth/reset_password", { data })
+    login: ({ email, password }) => axios.post('/api/auth/login', { email, password }),
+    signup: ({ email, password }) => axios.post('/api/users/signup', { email, password }),
+    confirm: token => axios.post('/api/auth/confirmation', { token }).then(res => res.data.user),
+    resetPasswordRequest: email => axios.post('/api/auth/reset_password_request', { email }),
+    validateToken: token => axios.post('/api/auth/validate_token', { token }),
+    resetPassword: data => axios.post('/api/auth/reset_password', { data }),
   },
-
-
 };
 
 /* export default {
